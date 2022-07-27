@@ -85,6 +85,29 @@ let getProducts = function () {
 
 getProducts();
 
+
+//? search data
+let searchInput = document.querySelector("div.search input");
+function search() {
+  let cards = document.querySelectorAll("#card-continer .card");
+  for (let i = 0; i < cards.length; i++) {
+    // console.log(searchInput.value.toUpperCase());
+    // console.log(cards[i].title);
+    if (
+      cards[i].children[0].nextElementSibling.children[0].textContent
+        .toUpperCase()
+        .includes(searchInput.value.toUpperCase()) ||
+      cards[i].children[0].children[1].children[0].textContent
+        .toUpperCase()
+        .includes(searchInput.value.toUpperCase())
+    )
+      cards[i].style.display = "";
+    else cards[i].style.display = "none";
+  }
+}
+searchInput.addEventListener("keyup", search);
+
+
 //? add to cart
 let purchase = JSON.parse(window.localStorage.getItem("purchase"));
 function addCart(e) {
