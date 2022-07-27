@@ -45,4 +45,70 @@ addButton.addEventListener("click",()=>{
    imgInput.value="";
    categoryInput.value="";
 })   
-    
+function showProducts(array){
+    array.forEach(element=>{
+       const itemsContainer = document.createElement("div");
+       itemsContainer.classList.add("showingItems");
+       const icon = document.createElement("p");
+       const icon1 = document.createElement("i");
+       icon1.innerHTML='<i class="fa-solid fa-eye">';
+       const icon2 = document.createElement("i");
+       icon2.innerHTML='<i class="fa-solid fa-pen"></i>';
+       const icon3 = document.createElement("i");
+       icon3.innerHTML='<i class="fa-solid fa-delete-left"></i>';
+       icon.appendChild(icon1);
+       icon.appendChild(icon2);
+       icon.appendChild(icon3);
+       icon.classList.add="icons";
+       itemsContainer.appendChild(icon);
+        const productCategory = document.createElement("p");
+        productCategory.textContent=element.category;
+        itemsContainer.appendChild(productCategory);
+        const productPrice = document.createElement("p");
+        productPrice.textContent=element.price;
+        itemsContainer.appendChild(productPrice);
+        const productName = document.createElement("p");
+        productName.textContent=element.name;
+        itemsContainer.appendChild(productName);
+        itemsContainer.classList.add("showingItems")
+        icon2.addEventListener("click",()=>{
+            let obj ={};
+            let index = array.indexOf(element);
+           console.log(index);
+           nameInput.value = element.name;
+           detailsInput.value= element.details;
+           priceInput.value= element.price;
+           imgInput.value= element.image;
+           categoryInput.value= element.category;   
+           addButton.textContent="UPDATE";
+           addButton.addEventListener("click",()=>{
+               obj.name = nameInput.value;
+               obj.details = detailsInput.value;
+               obj.price = priceInput.value;
+               obj.image = imgInput.value;
+               obj.category = categoryInput.value;
+               array.splice(index);
+               array.splice(index,element);
+               
+               // localStorage.setItem("products",JSON.stringify(array))
+           //   deleteFromArray(array,element);
+           //   addButton.textContent="Add";
+           //   nameInput.value="";
+           //   detailsInput.value="";
+           //   priceInput.value="";
+           //   imgInput.value="";
+           //   categoryInput.value="";
+           //   array.push(object);
+           //   localStorage.setItem("products",JSON.stringify(array));
+           }) 
+           
+         
+        })
+        icon3.addEventListener("click",()=>{
+           let sto = deleteFromArray(array,element);
+           localStorage.setItem("products",JSON.stringify(sto));
+           itemsContainer.remove();
+       })
+        container.appendChild(itemsContainer);
+    })  
+   }    
