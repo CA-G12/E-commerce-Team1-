@@ -78,7 +78,7 @@ function deleteProduct(e) {
     e.target.parentElement.previousElementSibling.parentElement
   let card =
     e.target.parentElement.previousElementSibling.parentElement.parentElement;
-
+console.log("hello");
 
   for (let i = 0; i < purchases1.length; i++) {
     if (titleprouduct == purchases1[i]["name"]) {
