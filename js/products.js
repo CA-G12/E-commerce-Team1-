@@ -20,4 +20,67 @@
 //       }
 // ]
 
+let productsLocal = JSON.parse(localStorage.getItem(`products`));
+//? get data form localStorge
+let getProducts = function () {
+  let cardcontiner = document.getElementById("card-continer");
 
+  let arr = [...productsLocal]
+  arr.forEach((e,i)=>{
+
+
+    //? card
+    const card = document.createElement("div");
+    card.setAttribute("class", "card");
+    cardcontiner.appendChild(card);
+
+    //? divForImg
+    const divForImg = document.createElement("div");
+    card.appendChild(divForImg);
+
+    //  card image
+    const cardImg = document.createElement("img");
+    cardImg.src = productsLocal[i]["image"];
+    divForImg.appendChild(cardImg);
+
+    //Div overlay
+
+    const overlay = document.createElement("div");
+    overlay.setAttribute("class", "overlay");
+    overlay.style.transform = "rotateX(0deg)";
+    overlay.style.display = "none";
+    divForImg.appendChild(overlay);
+
+    //Div overlay > p
+
+    const overlayPara = document.createElement("p");
+    overlayPara.textContent = productsLocal[i]["details"];
+    overlay.appendChild(overlayPara);
+
+    //     <div class="descrip-addTocart">
+
+    const descripAddTocart = document.createElement("div");
+    descripAddTocart.setAttribute("class", "descrip-addTocart");
+    card.appendChild(descripAddTocart);
+
+    //card title
+    const title = document.createElement("h3");
+    title.textContent = productsLocal[i]["name"];
+    descripAddTocart.appendChild(title);
+
+    // card price
+    const price = document.createElement("h4");
+    price.textContent = productsLocal[i]["price"];
+    descripAddTocart.appendChild(price);
+
+    // add to cart button
+    const addToCart = document.createElement("ion-icon");
+    addToCart.name = "cart-outline";
+    addToCart.addEventListener("click", addCart);
+    descripAddTocart.appendChild(addToCart);
+})
+
+}
+;
+
+getProducts();
