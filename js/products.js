@@ -84,3 +84,22 @@ let getProducts = function () {
 ;
 
 getProducts();
+
+//? add to cart
+let purchase = JSON.parse(window.localStorage.getItem("purchase"));
+function addCart(e) {
+  let name = e.target.parentElement.firstChild.textContent;
+  let price = e.target.parentElement.children[1].textContent;
+  let image = e.target.parentElement.parentElement.firstChild.firstChild.src;
+  let details =
+    e.target.parentElement.parentElement.firstChild.lastChild.firstChild
+      .textContent;
+  if (purchase) {
+    purchase.push({ name, details, price, image });
+    window.localStorage.setItem("purchase", JSON.stringify(purchase));
+  }else{
+    purchase=[]
+    purchase.push({ name, details, price, image });
+    window.localStorage.setItem("purchase", JSON.stringify(purchase));
+  }
+}
