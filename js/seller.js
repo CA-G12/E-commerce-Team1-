@@ -112,3 +112,51 @@ function showProducts(array){
         container.appendChild(itemsContainer);
     })  
    }    
+   let rose = [];
+rose=JSON.parse(localStorage.getItem('products'));
+showProducts(rose);
+// search function*************************************************************************
+// function search(){
+//     let neededItem = searchInput.value;
+//         let plants = [];
+//         let items=[];
+//              plants = JSON.parse(localStorage.getItem('products'));
+//              plants.forEach(element => {
+//                 if(element.name === neededItem){
+//                    items.push(element);
+//                 }
+//                });  
+//          showProducts(items);      
+//      }
+    
+
+// searchIcon.addEventListener("click",()=>{
+    
+//     search();
+
+// })
+let searchInput1 = document.querySelector("#seachInput");
+console.log(searchInput1)
+
+function search() {
+
+  let cards = document.querySelectorAll(".showingItems");
+
+  for (let i = 0; i < cards.length; i++) {
+    // console.log(searchInput.value.toUpperCase());
+    // console.log(cards[i].title);
+// console.log(cards[i].children[3].textContent=== searchInput1.value );
+    if (
+        cards[i].children[3].textContent== searchInput1.value
+    ){
+        cards[i].style.display = "";
+        console.log("hhhhhhhhhhh")
+    }
+    else cards[i].style.display = "none";
+  }
+  
+}
+searchInput1.addEventListener("keyup", search);
+// ****************************************************************************************
+
+
