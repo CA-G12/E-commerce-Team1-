@@ -1,6 +1,128 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+    font-family: "Poppins", sans-serif;
+    color: #010101;
+    text-decoration: none;
+  }
+  /***********************************Start header and footer****************************/
+  nav , footer{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+  nav ul ,footer ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 420px;
+    align-items: center;
+    font-size: 18px;
+  }
+  nav div * , footer div * {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    margin: 0 10px;
+  }
+  footer{
+    width: 100%;
+    background-color: #47464611;
+    padding: 30px 50px;
+    margin-top: 30px;
+  }
+  footer ul {
+    font-size: 16px;
+    width: 330px;
+  }
+  /***********************************End header and footer****************************/
+  main {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 75vh;
+  }
+  main section {
+    width: 50%;
+  }
+  main section:nth-child(2) {
+    width: 50%;
+  }
+  
+  main section img {
+    width: 65%;
+    display: block;
+    margin: 0 auto;
+    height: 75vh;
+  }
+  h1 {
+    width: 600px;
+    word-spacing: 10px;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 111px;
+    font-family: "Belleza";
+    margin-top: 60px;
+  }
+  div#link {
+    display: flex;
+    margin: 20px 0;
+    width: max-content;
+  }
+  
+  div#link a {
+    padding: 0.7rem 2rem;
+    background-color: #010101;
+    color: white;
+    display: block;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    margin: 0 10px;
+  }
+  
+  p#description {
+    font-weight: 500;
+    font-size: 20px;
+    width: 299px;
+    padding-left: 10px;
+  }
+  
+  p#habed {
+    width: 254px;
+    height: 19px;
+    margin-top: 20px;
+    font-family: "Aeonik";
+    font-style: normal;
+    font-weight: 250;
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  main section div:last-child {
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    margin-top: 20px;
+  }
+  
+  main section div:last-child p {
+    width: 190px;
+    height: 43px;
+    left: 50px;
+    top: 245px;
+    font-family: "Aeonik";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 43px;
+    color: #000000;
+    opacity: 0.5;
+    padding-left: 10px;
+  
+  }
+  

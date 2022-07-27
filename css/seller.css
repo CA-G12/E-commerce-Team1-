@@ -1,6 +1,47 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    text-decoration: none;
+    color: #010101;
+  }
+  /***********************************Start header and footer****************************/
+  
+  nav,
+  footer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+  nav ul,
+  footer ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 420px;
+    align-items: center;
+    font-size: 18px;
+  }
+  nav div *,
+  footer div * {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    margin: 0 10px;
+  }
+  footer {
+    width: 100%;
+    background-color: #47464611;
+    padding: 30px 50px;
+    margin-top: 30px;
+  }
+  footer ul {
+    font-size: 16px;
+    width: 330px;
+  }
+  /***********************************End header and footer****************************/
+  
