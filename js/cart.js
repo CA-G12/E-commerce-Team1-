@@ -8,18 +8,18 @@
 //       }
 // ]
 
-let purchases1 = JSON.parse(window.localStorage.getItem("purchases"));
+let purchases1 = JSON.parse(window.localStorage.getItem("purchase"));
 if (purchases1) {
-  purchases1.push(purchases[0]);
-  window.localStorage.setItem(`purchases`, JSON.stringify(purchases1));
+  // purchases1.push(purchases[0]);
+  window.localStorage.setItem(`purchase`, JSON.stringify(purchases1));
 } else {
   let purchases1 = [];
-  purchases1.push(purchases[0]);
-  window.localStorage.setItem(`purchases`, JSON.stringify(purchases1));
+  // purchases1.push(purchases[0]);
+  window.localStorage.setItem(`purchase`, JSON.stringify(purchases1));
 }
 
 function getPurchaes() {
-  let purchases1 = JSON.parse(window.localStorage.getItem("purchases"));
+  let purchases1 = JSON.parse(window.localStorage.getItem("purchase"));
 
   let cardContainer = document.getElementById("card-container");
 
@@ -57,6 +57,7 @@ function getPurchaes() {
     const deleteBtn = document.createElement("ion-icon");
     deleteBtn.setAttribute("name", "trash-outline");
     cardInnerDiv.appendChild(deleteBtn);
+    deleteBtn.addEventListener('click',deleteProduct)
     // continer price
     const cardprice = document.createElement("div");
     cardprice.setAttribute("class", "card-price");
