@@ -90,3 +90,21 @@ console.log("hello");
   }
   window.localStorage.setItem("purchase", JSON.stringify(purchases1));
 }
+//total price for all purchases (subTotal)
+subTotal();
+function subTotal() {
+  let subtotal = document.getElementById("subtotal-num");
+  let s = document.querySelectorAll(".total-price");
+  let sum = 0;
+  console.log(s)
+  for (let i = 0; i < s.length; i++) {
+    // console.log(s[i].textContent);
+    sum += Number(s[i].textContent);
+    console.log(sum)
+    console.log(s[i].textContent)
+
+
+  }
+
+  subtotal.textContent = "$" + sum;
+}
