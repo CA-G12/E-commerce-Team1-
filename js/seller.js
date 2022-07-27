@@ -158,5 +158,15 @@ function search() {
 }
 searchInput1.addEventListener("keyup", search);
 // ****************************************************************************************
+function deleteFromArray(arr,idx){
+    let arr1 = []
+    for (let i = 0 ; i < arr.length ; i ++ ){
+        if (arr[i] == idx){
+            continue;
+        }
+        arr1.push(arr[i]);
+    }
+    return arr1;
+}
 
 
