@@ -39,3 +39,241 @@ nav , footer{
     width: 330px;
   }
   /***********************************End header and footer****************************/
+
+/* --------- start of main  section ---------- */
+
+main {
+  width: 92%;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+h2 {
+  font-weight: 400;
+  font-size: 24px;
+}
+/* --------- empty cart ---------- */
+#empty-cart{
+  margin-top: 40px;
+margin-bottom: 60px;
+display: none;
+}
+#empty-cart img{
+  width: 240px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+#empty-cart h2{
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: 600;
+  color:#494658;
+}
+#empty-cart p {
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+  margin-top: 15px;
+  font-size: 15px;
+text-align: center;
+color: #666183;
+
+}
+#empty-cart a{
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+  padding: 13px 25px;
+  border-radius: 26px;
+  background-color: var(--dark-primary);
+  color: var(--white);
+  display: block;
+  text-decoration: none;
+  margin-top: 30px;
+cursor: pointer;
+}
+
+
+
+#card-container {
+  border-bottom: #cac6da 1px solid;
+}
+
+#card-container .card {
+  display: flex;
+  margin: 30px 0;
+}
+#card-container .card div {
+  padding: 5px 8px;
+  
+}
+.card-img {
+  display: inline;
+  width: 133px;
+  height: 166px;
+}
+.card-title {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--dark-primary);
+}
+.card-description {
+  font-size: 13px;
+  line-height: 24px;
+  padding-top: 6px;
+  color: #101010;
+  max-width:300px;
+  max-height: 58px;
+  overflow: hidden;
+}
+.card-price {
+  color: var(--dark-primary);
+  display: flex;
+  height: max-content;
+}
+ .span-total{
+  color: #868392;
+margin-left:0 ;
+}
+
+.quantity-container {
+  display: flex;
+  width: 180px;
+  height: 46px;
+  justify-content: space-around;
+}
+
+.quantity-increase,
+.quantity-decrease {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  padding-top: 1px;
+  cursor: pointer;
+  background-color: rgba(210, 207, 201, 0.546);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  color: var(--dark-primary);
+}
+i.delete-item{
+width: 26px;
+height: 26px;
+background-color: rgba(24, 24, 24, 0.546);
+border-radius: 6px;
+cursor: pointer;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+margin-left: 30px;
+padding-top: 5px;
+color: var(--dark-primary);
+text-align: center;
+
+
+
+}
+
+#subtotal-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 12px;
+
+}
+#subtotal-text {
+  margin-right: 12px;
+  font-size: 20px;
+  color: var(--primary);
+  padding-top: 2px;
+  font-weight: 500;
+}
+#subtotal-num {
+  margin-right: 7px;
+  font-size: 24px;
+  color: var(--dark-primary);
+}
+p#taxes-and-shpping {
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: right;
+  color: var(--primary);
+
+}
+button#btn-checkout {
+  width: 100%;
+  padding: 16px 32px 16px 32px;
+  background-color: var(--dark-primary);
+  margin-top: 50px;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  margin-bottom: 70px;
+  display: block;
+
+}
+
+
+@media (min-width: 800px) {
+  main {
+    width: 85%;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  #empty-cart img{
+    width:  280px;
+  }
+  button#btn-checkout {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card-title {
+    font-size: 18px;
+  }
+  .card-description {
+    font-size: 15px;
+
+  }
+
+}
+
+/* main style large screen */
+@media (min-width: 1200px) {
+  #empty-cart img{
+    width:  300px;
+  }
+  section#subtotal {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  button#btn-checkout {
+    width: 172px;
+    margin-right: 5px;
+    margin-top: 15px;
+  }
+  div.card-inner-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .card-description {
+    font-size: 16px;
+    margin-top: 10px;
+    max-width:350px;
+
+
+  }
+  .quantity-container {
+    margin-top: 35px;
+  }
+  .card-total{
+    margin-top: 40px;
+  }
+}
+
+
