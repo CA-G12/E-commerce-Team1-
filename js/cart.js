@@ -1,13 +1,3 @@
-// let purchases =[
-//     {
-//         id: 0, 
-//         name: "plant",
-//         details: "smull plant",
-//         price: 25,
-//         image: "https://i.ibb.co/nf93YNY/5a37d136-c321-475f-b281-30fc40c7412a-40f10ce7320a016aedc72daf70cf0850.jpg"        
-//       }
-// ]
-
 let purchases1 = JSON.parse(window.localStorage.getItem("purchase"));
 if (purchases1) {
   // purchases1.push(purchases[0]);
@@ -20,7 +10,6 @@ if (purchases1) {
 
 function getPurchaes() {
   let purchases1 = JSON.parse(window.localStorage.getItem("purchase"));
-
   let cardContainer = document.getElementById("card-container");
 
   for (let i = 0; i < purchases1.length; i++) {
@@ -70,7 +59,7 @@ function getPurchaes() {
   }
 }
 getPurchaes()
-//Delete items from cart function
+
 function deleteProduct(e) {
   let titleprouduct =
     e.target.parentElement.previousElementSibling.nextElementSibling.children[0]
@@ -99,12 +88,9 @@ function subTotal() {
   let sum = 0;
   console.log(s)
   for (let i = 0; i < s.length; i++) {
-    // console.log(s[i].textContent);
     sum += Number(s[i].textContent);
     console.log(sum)
     console.log(s[i].textContent)
-
-
   }
 
   subtotal.textContent = "$" + sum;

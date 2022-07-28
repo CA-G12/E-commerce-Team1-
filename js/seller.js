@@ -1,38 +1,4 @@
-let products = [];
-//    { name: "Spider Plant - Chlorophytum Comosum",
-//     details: "The spider plant is easy to care for and maintain - that's very popular in many countries. It has been grown indoors for over 200 years and flowers ( white) from the stems in the summer and spring",
-//     price: "25",
-//     image:"https://images.app.goo.gl/LYUbo9SoUFSRE4xM8",
-//     category:"House Plants"
-// },
-// {
-//     name: "Aloe Vera - Aloe",
-//     details: "Aloe Vera is a succulent leaf plant that is well known for its health and beauty benefits.",
-//     price: "15",
-//     image:"https://images.app.goo.gl/MxpjAr4ZY8EV5LjA7",
-//     category:"House Plants"
-// },
-// {
-//     name: "Peace Lily - Spathiphyllum Wallisii",
-//     details: "Aloe Vera is a succulent leaf plant that is well known for its health and beauty benefits.",
-//     price: "15",
-//     image:"https://images.app.goo.gl/MxpjAr4ZY8EV5LjA7",
-//     category:"House Plants"
-// },
-// {
-//     name: "Jade Plant - Crassula Ovata",
-//     details: "The Jade plant is another common house plant that grows with a thick trunk and shiny oval shaped leaves.",
-//     price: "20",
-//     image:"https://images.app.goo.gl/ECoPxaeHU8XWJe7K8",
-//     category:"House Plants"
-// },
-// {
-//     name: "African Violet - Saintpaulia",
-//     details: "The African violet is a wonderful flowering type species that will flower at anytime of the year with proper care and conditions provided.",
-//     price: "20",
-//     image:"https://images.app.goo.gl/dqdVp8n898ZVMWXWA",
-//     category:"House Plants"
-// }
+
 const addButton = document.querySelector(".btn");
 const nameInput = document.querySelector("#name");
 const detailsInput = document.querySelector("#details");
@@ -44,8 +10,7 @@ const searchInput = document.querySelector("#seachInput");
 const searchIcon = document.querySelector("#searchIcon");
 const container = document.querySelector(".productsList");
 const showingItems = document.querySelector(".showingItems");
-// localStorage.setItem("products",JSON.stringify(products));
-// localStorage Add function*************************************************************************************
+
 function addToLocalStorage(obje) {
     let plants = [];
     if (localStorage.getItem('products') == null) {
@@ -118,30 +83,6 @@ function showProducts(array, search = false) {
             imgInput.value = element.image;
             categoryInput.value = element.category;
             addButton.textContent = "UPDATE";
-            // edit(array,index);
-
-            // addButton.addEventListener("click", () => {
-            //     obj.name = nameInput.value;
-            //     obj.details = detailsInput.value;
-            //     obj.price = priceInput.value;
-            //     obj.image = imgInput.value;
-            //     obj.category = categoryInput.value;
-            //     array.splice(index);
-            //     array.splice(index, obj);
-
-            // localStorage.setItem("products",JSON.stringify(array))
-            //   deleteFromArray(array,element);
-            //   addButton.textContent="Add";
-            //   nameInput.value="";
-            //   detailsInput.value="";
-            //   priceInput.value="";
-            //   imgInput.value="";
-            //   categoryInput.value="";
-            //   array.push(object);
-            //   localStorage.setItem("products",JSON.stringify(array));
-            // })
-
-
         })
         icon3.addEventListener("click", () => {
             let sto = deleteFromArray(array, element);
@@ -157,22 +98,14 @@ let rose = [];
 rose = JSON.parse(localStorage.getItem('products'));
 showProducts(rose);
 
-// search function*************************************************************************
+// search function
 function search() {
     let neededItem = searchInput.value;
     if (neededItem.length > 0) {
         removeElementsByClass('showingItems')
     }
     let plants = [];
-    // let items = [];
     plants = JSON.parse(localStorage.getItem('products'));
-    // plants.forEach(element => {
-    //     if (element.name === neededItem) {
-    //         items.push(element);
-    //     }
-    // });
-    // showProducts(items);
-    // search1(plants,neededItem);
     showProducts(search1(plants,neededItem));
 }
 

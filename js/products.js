@@ -1,25 +1,3 @@
-// let products =[
-//     {
-//         id: 0, 
-//         name: "plant",
-//         details: "smull plant",
-//         price: 25,
-//         image: "https://i.ibb.co/nf93YNY/5a37d136-c321-475f-b281-30fc40c7412a-40f10ce7320a016aedc72daf70cf0850.jpg"        
-//       }
-// ]
-
-
-
-// let purchases =[
-//     {
-//         id: 0, 
-//         name: "plant",
-//         details: "smull plant",
-//         price: 25,
-//         image: "https://i.ibb.co/nf93YNY/5a37d136-c321-475f-b281-30fc40c7412a-40f10ce7320a016aedc72daf70cf0850.jpg"        
-//       }
-// ]
-
 let productsLocal = JSON.parse(localStorage.getItem(`products`));
 //? get data form localStorge
 let getProducts = function () {
@@ -27,7 +5,6 @@ let getProducts = function () {
 
   let arr = [...productsLocal]
   arr.forEach((e,i)=>{
-
 
     //? card
     const card = document.createElement("div");
@@ -91,8 +68,6 @@ let searchInput = document.querySelector("div.search input");
 function search() {
   let cards = document.querySelectorAll("#card-continer .card");
   for (let i = 0; i < cards.length; i++) {
-    // console.log(searchInput.value.toUpperCase());
-    // console.log(cards[i].title);
     if (
       cards[i].children[0].nextElementSibling.children[0].textContent
         .toUpperCase()
